@@ -22,10 +22,12 @@ def query_local_dns_server(domain, question_type):
 # Define a function to query a public DNS server for the IP address of a given domain name
 def query_dns_server(domain, question_type):
     resolver = dns.resolver.Resolver()
-    resolver.nameservers = [????]
+    resolver.nameservers = []
+    #resolver.nameservers = [????]
     answers = resolver.resolve(domain, question_type)  # provide the domain and question_type
 
-    ip_address = answers[??].to_text()
+    ip_address = answers[].to_text()
+    #ip_address = answers[??].to_text()
     return ip_address
 
 
